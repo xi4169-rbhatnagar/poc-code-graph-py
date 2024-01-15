@@ -2,6 +2,7 @@ import logging
 import os
 from code2flow.engine import map_it
 
+
 def generate_nodes_and_edges(directory_path):
     # Generate absolute path
     directory_path = os.path.abspath(directory_path)
@@ -14,8 +15,9 @@ def generate_nodes_and_edges(directory_path):
 
     try:
         # Getting all the python files recursively
-        all_files = [os.path.abspath(os.path.join(d, f)) for d, _, files in os.walk(directory_path) for f in files if f.endswith('.py')]
-        
+        all_files = [os.path.abspath(os.path.join(d, f)) for d, _, files in os.walk(directory_path) for f in files if
+                     f.endswith('.py')]
+
         _, nodes, edges = map_it(all_files, 'py', [], [], [], [], [], False, None)
 
         node_list = [n.to_dict() for n in nodes]

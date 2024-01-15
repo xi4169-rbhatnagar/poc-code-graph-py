@@ -4,6 +4,7 @@ import os
 import sys
 from __init__ import generate_nodes_and_edges
 
+
 def main():
     # Check if directory path is provided
     if len(sys.argv) < 2:
@@ -25,6 +26,7 @@ def main():
 
     # Output the nodes and edges to stdout
     print(json.dumps({'nodes': nodes, 'edges': edges}, indent=4))
+
 
 if __name__ == "__main__":
     main()
